@@ -3,7 +3,7 @@ class Dude():
         self.health = 100
 
     def attack(self, target):
-        damage = 20
+        damage = 40
         target.health -= damage
 
     def getHealth(self):
