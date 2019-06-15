@@ -17,10 +17,10 @@ if __name__ == '__main__':
     while True:
         dude1.attack(dude2)
         if dude2.getHealth() < 0:
-            print 'Dude1 wins'
+            print('Dude1 wins')
             exit(0)
         dude2.attack(dude1)
         if dude1.getHealth() < 0:
-            print 'Dude2 wins'
+            print('Dude2 wins')
             exit(0)
 
