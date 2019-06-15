@@ -35,6 +35,11 @@ class Attack():
 class Fireball(Attack):
     def __init__(self):
         super(Fireball, self).__init__('fireball', 20, 40, 30)
+        # do not worry about the syntax for super.... just know
+        # this is calling the parent (Attack) class's __init__.
+        # you don't really need to know details of how it works and it can be complicated
+        # so just know this is needed to initalize the underlying parent Attack class
+        # PS parent classes are also known as superclasses. Hence the super...
 
 class Punch(Attack):
     def __init__(self):
