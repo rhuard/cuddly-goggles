@@ -55,11 +55,19 @@ class PlayerDude(Dude):
 
     # this is the method we have to implement in order to create an instance of a Dude
     def attack(self, target):
+        '''Something to note here, I am getting input from user, but I am not doing nearly enough saftey around checking its type
+            This is just for a quick and dirty prototype, if the user were to enter a letter it would crash the program.
+        '''
         # loop until we have a valid choice of attack to use
         choice = -1
         while True:
-            choice = int(input('what attack to use [0, 1]'))
-            if choice not in [0,1]:
+            possible_choices = list(range(0, len(self._attacks)))
+            # creates a list out of range(0, length of attacks. range creates a generator (don't really need to know what that is) that can be used to get values from start to end value - 1
+            # in this case start is 0 and end is length of the attacks list. So with two attacks we have 0 -> len(attacks) - 1. or 0 -> 2 -1 or 0 -> 1. If we had 4 attacks it would generate
+            # 0 -> 3. Remember list indecies start at 0. So 0 is the first attack and 1 is the seccond attack etc.
+            # so possible_choices ends up being a list of all possible attacks, we use that to print the possible inputs for the user and we use that to make sure we have a valid attack selected
+            choice = int(input('what attack to use {}'.format(possible_choices)))
+            if choice not in possible_choices: # make sure its a valid attack
                 print('invalid choice, try again')
             else:
                 break # while True is an infinite loop, break will break out of a loop
